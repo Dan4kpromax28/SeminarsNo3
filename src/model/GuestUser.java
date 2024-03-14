@@ -3,24 +3,27 @@ package model;
 //import java.time.LocalDateTime;
 
 public class GuestUser {
-    private long generatedid;
+    private long userID;
 
     private static long counter = 0;
 
-    public long getGeneratedid() {
-        return generatedid;
+    public long getUserID() {
+        return userID;
     }
 
-    public void setGeneratedid() {
-        this.generatedid = counter;
+    public void setUserID() {
+        this.userID = counter;
         counter++;
+    }
+
+    public GuestUser(){
+        setUserID();
     }
 
     @Override
     public String toString() {
-        return "GuestUser{" +
-                "generatedid = " + generatedid +
-                '}';
+        return
+                "" + userID;
     }
 
     public void test() {
