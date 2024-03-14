@@ -1,2 +1,5 @@
-package model;public enum PostType {
+package model;
+
+public enum PostType {
+    privatePost, publicPost
 }

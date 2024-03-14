@@ -1,12 +1,14 @@
 package model;
 
-public abstract class User extends GuestUser{
+import service.PostService;
+
+public abstract class User extends GuestUser implements PostService {
     //variables
 
     private String username;
     //TODO pasword enkodesana, piemeram , ar md5
     private String password;
-    private String nameAndSurnameORTitle;
+    protected String nameAndSurnameORTitle;
 
 
 
@@ -25,7 +27,7 @@ public abstract class User extends GuestUser{
         return password;
     }
 
-    public void setUsername(String username) {
+    public void setUsername() {
         this.username = nameAndSurnameORTitle+ "_" + getUserID();
     }
 
