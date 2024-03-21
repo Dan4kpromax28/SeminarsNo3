@@ -31,7 +31,7 @@ public abstract class User extends GuestUser implements PostService {
     }
 
     public void setUsername() {
-        this.username = nameAndSurnameORTitle+ "_" + getUserID();
+        this.username = nameAndSurnameORTitle.toLowerCase().replace(" ","")+ "_" + getUserID();
     }
 
     public void setPassword(String password) {
@@ -67,7 +67,7 @@ public abstract class User extends GuestUser implements PostService {
 
     @Override
     public String toString() {
-        return super.toString() + ":";
+        return super.toString() + ":" + nameAndSurnameORTitle;
     }
 
     // TODO login()

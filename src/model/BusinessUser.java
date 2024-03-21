@@ -27,10 +27,29 @@ public class BusinessUser extends User{
 
     @Override
     public void setNameAndSurnameORTitle(String nameAndSurnameORTitle) {
-        if(nameAndSurnameORTitle != null && nameAndSurnameORTitle.matches("[A-Za-z0-9%&+@=.,!]{3,50}"))
+        if(nameAndSurnameORTitle != null && nameAndSurnameORTitle.matches("[A-Za-z0-9%&+@=.,! ]{3,50}"))
             super.nameAndSurnameORTitle = nameAndSurnameORTitle;
         else
             super.nameAndSurnameORTitle = "----------";
+    }
+
+    public BusinessUser() {
+        super();
+        setNameAndSurnameORTitle("AutoServis");
+        setUsername();
+        setPVNNo("LV40003245752");
+    }
+
+    public BusinessUser(String title, String password, String PVNNo){
+        super(password);
+        setNameAndSurnameORTitle(title);
+        setUsername();
+        setPVNNo(PVNNo);
+    }
+
+    @Override
+    public String toString() {
+        return super.toString()+ ":" + PVNNo;
     }
 
     @Override
