@@ -1,8 +1,9 @@
 package service;
 
+import model.Post;
 import model.PostType;
 
 public interface PostService {
-    public abstract void publishPost(PostType type, String msg) throws Exception;
+    public abstract Post publishPost(PostType type, String msg) throws Exception;
 
 }

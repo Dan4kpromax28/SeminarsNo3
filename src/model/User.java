@@ -1,6 +1,7 @@
 package model;
 
 import service.PostService;
+import service.impl.UserServiceImpl;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -12,6 +13,8 @@ public abstract class User extends GuestUser implements PostService {
     //TODO pasword enkodesana, piemeram , ar md5
     private String password;
     protected String nameAndSurnameORTitle;
+
+    //public UserServiceImpl = new UserServiceImpl()
 
 
 

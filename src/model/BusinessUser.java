@@ -52,9 +52,33 @@ public class BusinessUser extends User{
         return super.toString()+ ":" + PVNNo;
     }
 
-    @Override
-    public void publishPost(PostType type, String msg) throws Exception {
+    public void createPage(String title, String description) throws Exception {
+        if (title == null || description == null) throw new Exception("Problem");
+        for (Page tempP : listOfPages){
+            if(tempP.getTitle().equals(title)){
+                throw new Exception("This title already exist");
+            }
+        }
+        Page newPage = new Page(title,description);
+        listOfPages.add(newPage);
+    }
 
+    @Override
+    public Post publishPost(PostType type, String msg) throws Exception {
+        Post newPost = new Post();//Parbaudit parametrus
+        return newPost;
+    }
+
+    public void publishPostInPage(String pageTitle, String msg) throws Exception {
+        //parbaudes
+            for (Page tempP : listOfPages){
+                if(tempP.getTitle().equals(pageTitle)){
+                    Post newPost = publishPost(PostType.publicPost,msg);
+                    tempP.getPostsInPage().add(newPost);
+                    return;
+                }
+            }
+            throw new Exception("Page not found");
     }
 
 

@@ -42,10 +42,14 @@ public class Page {
         return postsInPage;
     }
 
-    public Page(){
+    public Page() {
         setTitle("Autoserviss Ventspili");
         setDescription("Autoserviss Ventspioli - jaunakas aktualitates");
     }
+    public Page(String title, String description){
+            setTitle(title);
+            setDescription(description);
+        }
 
     public String toString(){
         return title+"(" + description + ") -> "+ followers.size();

@@ -48,14 +48,14 @@ public class PrivateUser extends User{
     }
 
     @Override
-    public void publishPost(PostType type, String msg) throws Exception {
+    public Post publishPost(PostType type, String msg) throws Exception {
         if(type == null && msg == null){
             throw new Exception("Problem with input parameter");
         }
         Post newPost = new Post(msg);
         if(type.equals(PostType.privatePost)) privatePosts.add(newPost);
         else if (type.equals(PostType.publicPost)) publicPosts.add(newPost);
-
+        return newPost;
     }
     public void followPrivateUser(User user) throws Exception {
         if(user != null){
